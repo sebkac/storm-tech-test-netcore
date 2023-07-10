@@ -21,6 +21,22 @@
             </a>
         </li>
 
+        <li class="list-group-item">
+            <div class="row">
+            <div class="col-md-4">Title</div><div class="col-md-4">Owner</div>
+            <div class="col-md-2 text-right"><button type="submit" id="rankOrder" onclick="revertRank()">Rank</button></div>
+            </div>
+        </li>
+
+        <script>
+            function revertRank(){ 
+                var sortParam = 'rankDescending=';
+                var base = window.location.href.split(sortParam)[0];
+                var sortValue = (window.location.href.split(sortParam)[1] === "true");
+                window.location.href = base + sortParam + !sortValue;
+            }
+        </script>
+
         @foreach (var item in Model.Items)
         {
             string contextualClass;
