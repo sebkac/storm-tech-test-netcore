@@ -9,14 +9,16 @@ namespace Todo.Models.TodoItems
         public UserSummaryViewmodel ResponsibleParty { get; }
         public bool IsDone { get; }
         public Importance Importance { get; }
+        public string Rank { get; }
 
-        public TodoItemSummaryViewmodel(int todoItemId, string title, bool isDone, UserSummaryViewmodel responsibleParty, Importance importance)
+        public TodoItemSummaryViewmodel(int todoItemId, string title, bool isDone, UserSummaryViewmodel responsibleParty, Importance importance, string rank)
         {
             TodoItemId = todoItemId;
             Title = title;
             IsDone = isDone;
             ResponsibleParty = responsibleParty;
             Importance = importance;
+            Rank = rank;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Todo.EntityModelMappers.TodoLists
     {
         public static TodoListDetailViewmodel Create(TodoList todoList)
         {
-            var items = todoList.Items.Select(TodoItemSummaryViewmodelFactory.Create).Where(i => i.IsDone == false).OrderBy(i => i.Importance).ToList();
+            var items = todoList.Items.Select(TodoItemSummaryViewmodelFactory.Create).Where(i => i.IsDone == false).OrderBy(i=>i.Rank).OrderBy(i => i.Importance).ToList();
             return new TodoListDetailViewmodel(todoList.TodoListId, todoList.Title, items);
         }
     }

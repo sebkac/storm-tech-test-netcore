@@ -39,7 +39,7 @@
                 
                 <div class="row">
 
-                <div class="col-md-8">
+                <div class="col-md-4">
                     <a asp-action="Edit" asp-controller="TodoItem" asp-route-todoItemId="@item.TodoItemId">
 
                         @if (item.IsDone)
@@ -53,11 +53,18 @@
                     </a>
                 </div>
 
-                <div class="col-md-4 text-right">
+                <div class="col-md-4">
                     <small>
                         @item.ResponsibleParty.UserName
 
                         <img src="https://www.gravatar.com/avatar/@Gravatar.GetHash(item.ResponsibleParty.Email)?s=30"/>
+
+                    </small>
+                </div>
+
+                <div class="col-md-2 text-right">
+                    <small>
+                        @item.Rank
 
                     </small>
                 </div>
